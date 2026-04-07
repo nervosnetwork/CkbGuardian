@@ -33,4 +33,4 @@ If connecting to the CKB service requires an API key, you need to:
 
 ### Limiting Dangerous RPCs
 
-You can use https://github.com/jiangxianliang007/ckb-nginx-proxy to run the CKB proxy to limit dangerous RPCs.
+You can use https://github.com/nervosnetwork/ckb-nginx-proxy to run the CKB proxy to limit dangerous RPCs.
