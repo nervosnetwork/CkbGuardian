@@ -6,6 +6,9 @@ on:
 #   手动触发事件
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   npm-install-1:
     strategy:
@@ -15,8 +18,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '16'
       - name: Get yarn cache directory path
@@ -52,7 +55,7 @@ jobs:
           mkdir public
           cp -r ckb/mochawesome-report/* public          
       - name: Deploy report page to GitHub Page
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: success() || failure()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
