@@ -63,7 +63,9 @@ jobs:
         if: success() || failure()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public        
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Publish reports
         if: failure()
         uses: actions/upload-artifact@v4
